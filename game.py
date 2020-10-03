@@ -49,7 +49,7 @@ for y in range(4):
                         score[int(table[y][x]) - 1] += 1
                         print(score)
                     except ValueError:
-                        print('Что-то определённо не так')
+                        print('Что-то определённо не так(нельзя ставить символы уже на заполненные места)')
                         continue
 
 
