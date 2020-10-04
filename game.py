@@ -28,12 +28,12 @@ while current_move < 20:
             x, y = map(int, input(f'Ход игрока {player + 1}: ').split())
         except:
             print('Введите числа в формате: НОМЕР_В_СТРОКЕ НОМЕР_СТОЛБЦА')
-            break
+            continue
         try:
             table[y - 1][x - 1] = players_char[player]
         except:
             print('Введите числа удовлетворяющие кол-ву строк(1-5) и кол-ву столбцов(1-4)')
-            break
+            continue
         draw_board(table)
         current_move += 1
 
