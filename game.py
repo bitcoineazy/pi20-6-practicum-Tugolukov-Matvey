@@ -30,7 +30,11 @@ while current_move < 20:
             print('Введите числа в формате: НОМЕР_В_СТРОКЕ НОМЕР_СТОЛБЦА')
             continue
         try:
-            table[y - 1][x - 1] = players_char[player]
+            if table[y - 1][x - 1] == "*":
+                table[y - 1][x - 1] = players_char[player]
+            elif table[y - 1][x - 1] != "*":
+                print('Поле уже занято')
+                current_move -= 1
         except:
             print('Введите числа удовлетворяющие кол-ву строк(1-5) и кол-ву столбцов(1-4)')
             continue
@@ -51,7 +55,6 @@ for y in range(4):
                     except ValueError:
                         print('Что-то определённо не так(нельзя ставить символы уже на заполненные места)')
                         continue
-
 
 #Теперь в score удвоенное количество штрафных очков каждого игрока
 #Так что их все нужно поделить на 2
