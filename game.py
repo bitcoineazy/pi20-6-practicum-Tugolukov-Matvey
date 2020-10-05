@@ -31,6 +31,8 @@ while current_move < 20:
             elif table[y - 1][x - 1] != "*":
                 print('Поле уже занято')
                 current_move -= 1
+            elif 'end' in x or y:
+                break
         except:
             print('Введите числа удовлетворяющие кол-ву строк(1-5) и кол-ву столбцов(1-4)')
             continue
